@@ -1,0 +1,5 @@
+colorama
+snscrape
+tqdm
+markovify
+nltk
