@@ -1,10 +1,8 @@
 import snscrape.modules.twitter as sntwitter
-from praw.models import Redditor
 from tqdm import tqdm
 import requests as rq
 import markovify
 import nltk
-import praw
 
 from util_funcs import f_time
 
@@ -130,7 +128,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
     # Gets the username of the user
     username = config['reddit']['username']
     url      = f'https://api.pushshift.io/reddit/comment/search/?author={username}&sort=desc&sort_type=created_utc&size=100'
-    print(f'{log}[LOG]     {res}Getting the newest comments of {spe}u/{username}{res}')
+    print(f'{log}[LOG]     {res}Getting the newest reddit comments of {spe}u/{username}{res}')
     # Scrapes the comments
     comments = []
     pbar     = tqdm(total=10000, leave=False, colour='#696969')
