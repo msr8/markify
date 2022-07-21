@@ -1,7 +1,7 @@
 from setuptools import setup
 
-# with open('README.md') as f:
-#     long_desc = f.read()
+with open('README.md') as f:
+    long_desc = f.read()
 
 with open('VERSION.txt') as f:
     version = f.read()
@@ -15,8 +15,8 @@ setup(
     version = version,
     description = 'A python command line application to scrape your interactions in social media(s) and generate new sentences based on them using markov chains',
     # py_modules=['mvp_msr8'],
-    # long_description=long_desc,
-    # long_description_content_type='text/markdown',
+    long_description=long_desc,
+    long_description_content_type='text/markdown',
     install_requires = requirements,
     package_dir = {'': 'src'},
     entry_points = {
@@ -32,6 +32,11 @@ setup(
         'Operating System :: OS Independent'
     ]
 )
+
+
+
+
+
 
 
 

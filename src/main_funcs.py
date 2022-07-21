@@ -86,12 +86,12 @@ def init_config(config_dir:str, config_fp:str, data_dir:str, data_fp:str, colors
     else:
         print(f'{war}[WARNING]{res} {spe}{config_fp}{res} does not exist. Creating it')
         with open(config_fp, 'w') as f:
-            json.dump({}, f)
+            json.dump({ 'reddit':{'username':''} , 'discord':{'token':''} , 'twitter':{'username':''} }, f)
     
     # Checks if data file exists
     if os.path.exists(data_fp):
         print(f'{log}[LOG]     {res}{spe}{data_fp}{res} exists')
-    # If it doesnt, creates an empty {wtv}.json
+    # If it doesnt, creates an empty data file
     else:
         print(f'{log}[LOG]     {res}{spe}{data_fp}{res} does not exist. Creating it')
         with open(data_fp, 'w') as f:

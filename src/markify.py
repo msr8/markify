@@ -14,7 +14,7 @@ import time as t
 
 def parse_the_fookin_args():
     parser = ArgumentParser()
-    parser.add_argument('-c', '--config',  type=str,  help='The path to config file. By default, its {LOCALAPPDATA}/markone/config.json on windows, and ~/.config/markone/config.json on other operating systems')
+    parser.add_argument('-c', '--config',  type=str,  help='The path to config file. By default, its {LOCALAPPDATA}/markify/config.json on windows, and ~/.config/markify/config.json on other operating systems')
     parser.add_argument('-d', '--data',    type=str,  help='The path to the json data file. If given, the program will not scrape any data and will just compile the model and generate sentences')
     parser.add_argument('-n', '--number',  type=int,  help='Number of sentences to generate. Default is 50', default=50)
     args = parser.parse_args()
@@ -122,6 +122,8 @@ TODO
 -> Change bar format
 -> Write checks in every main func
 -> Fix discord timestamp
+-> Add a 100 msg check in generate sentences
+-> Add try/except
 
 
 

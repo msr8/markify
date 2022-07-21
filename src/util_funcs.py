@@ -47,7 +47,7 @@ def get_config_dir(system:str, usr:str, args) -> tuple:
         APPDATA    = os.environ['LOCALAPPDATA']
         APPDATA    = os.path.join('C:\\' , 'Users' , usr , 'AppData' , 'LOCAL') if not APPDATA else APPDATA
         # Config directory
-        CONFIG_DIR = os.path.join(APPDATA, 'markome')
+        CONFIG_DIR = os.path.join(APPDATA, 'markify')
         # COnfig file
         CONFIG_FP  = os.path.join(CONFIG_DIR, 'config.json')
     else:
@@ -55,7 +55,7 @@ def get_config_dir(system:str, usr:str, args) -> tuple:
         HOME       = os.environ['HOME']
         HOME       = os.path.join('/' , 'Users' , usr) if not HOME else HOME
         # Config directory
-        CONFIG_DIR = os.path.join(HOME, '.config', 'markome')
+        CONFIG_DIR = os.path.join(HOME, '.config', 'markify')
         # Config file
         CONFIG_FP  = os.path.join(CONFIG_DIR, 'config.json')
     # Data directory
