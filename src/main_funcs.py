@@ -86,7 +86,7 @@ def init_config(config_dir:str, config_fp:str, data_dir:str, data_fp:str, colors
     else:
         print(f'{war}[WARNING]{res} {spe}{config_fp}{res} does not exist. Creating it')
         with open(config_fp, 'w') as f:
-            json.dump({ 'reddit':{'username':''} , 'discord':{'token':''} , 'twitter':{'username':''} }, f)
+            json.dump({ 'reddit':{'username':''} , 'discord':{'token':''} , 'twitter':{'username':''} }, f, indent=4)
     
     # Checks if data file exists
     if os.path.exists(data_fp):
@@ -112,6 +112,11 @@ def init_config(config_dir:str, config_fp:str, data_dir:str, data_fp:str, colors
 
 
 
+
+
+
+
+
 def do_reddit(config:dict, data_fp:str, colors:dict):
     """
     It scrapes the comments of a user from reddit via pushshift.io, and saves them to the data file
@@ -123,7 +128,17 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
     :param colors: A dictionary containing the colors for the terminal
     :type colors: dict
     """
-    res, log, spe = colors['res'], colors['log'], colors['spe']
+    res, log, war, spe = colors['res'], colors['log'], colors['war'], colors['spe']
+
+    # Checks if all the required info is present
+    present = False
+    if config.get('reddit'):
+        if config.get('reddit').get('username'):
+            present = True
+    # If it isnt given, warns the user and skips reddit
+    if not present:
+        print(f'{war}[WARNING]{res} Reddit username not given, so {spe}skipping reddit{res}')
+        return
 
     # Gets the username of the user
     username = config['reddit']['username']
@@ -184,6 +199,11 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
 
 
 
+
+
+
+
+
 def do_discord(config:dict, data_fp:str, colors:dict):
     """
     It logs into discord, gets all the DM channels, gets all the messages in those channels, and saves
@@ -194,7 +214,17 @@ def do_discord(config:dict, data_fp:str, colors:dict):
     :param data_fp: The file path to the data file
     :type data_fp: str
     """
-    res, log, spe = colors['res'], colors['log'], colors['spe']
+    res, log, war, spe = colors['res'], colors['log'], colors['war'], colors['spe']
+
+    # Checks if all the required info is present
+    present = False
+    if config.get('discord'):
+        if config.get('discord').get('token'):
+            present = True
+    # If it isnt given, warns the user and skips discord
+    if not present:
+        print(f'{war}[WARNING]{res} Discord token not given, so {spe}skipping discord{res}')
+        return
 
     token = config['discord']['token']
     # Defines the headers to use in all the requests
@@ -209,6 +239,11 @@ def do_discord(config:dict, data_fp:str, colors:dict):
     username = r.get('username')
     disc     = r.get('discriminator')
     my_id    = r.get('id')
+    # Checks if the token is valid
+    if not my_id:
+        print(f'{war}[WARNING]{res} Discord token is invalid, so {spe}skipping discord{res}')
+        return
+    # Else, prints the username
     print(f'{log}[LOG]     {res}Logged in as {spe}{username}#{disc}{res} ({my_id})')
 
     # Gets all the DMs
@@ -261,6 +296,10 @@ def do_discord(config:dict, data_fp:str, colors:dict):
 
 
 
+
+
+
+
 def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
     """
     It scrapes the tweets of the user specified in the config file, and saves them to the data file
@@ -272,7 +311,17 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
     :param max_twts: The maximum number of tweets to scrape, defaults to 10000
     :type max_twts: int (optional)
     """
-    res, log, spe = colors['res'], colors['log'], colors['spe']
+    res, log, war, spe = colors['res'], colors['log'], colors['war'], colors['spe']
+
+    # Checks if all the required info is present
+    present = False
+    if config.get('twitter'):
+        if config.get('twitter').get('username'):
+            present = True
+    # If it isnt given, warns the user and skips reddit
+    if not present:
+        print(f'{war}[WARNING]{res} Twitter username not given, so {spe}skipping twitter{res}')
+        return
 
     # Gets the username
     username = config['twitter']['username']
@@ -326,6 +375,9 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
 
 
 
+
+
+
 def make_model(data_fp:str, colors:dict) -> POSifiedText:
     """
     It loads the data, extracts the useful text from it, and builds the model
@@ -334,7 +386,7 @@ def make_model(data_fp:str, colors:dict) -> POSifiedText:
     :type data_fp: str
     :return: A POSifiedText object
     """
-    res, log, spe = colors['res'], colors['log'], colors['spe']
+    res, log, err, spe = colors['res'], colors['log'], colors['err'], colors['spe']
 
     # Loads the data
     with open(data_fp) as f:
@@ -350,6 +402,11 @@ def make_model(data_fp:str, colors:dict) -> POSifiedText:
             text = elem['content']
             texts.append(text)
     
+    # Checks if less then 100 texts are given
+    if len(texts) < 100:
+        print(f'{err}[ERROR]   Not enough data collected, must have atleast 100 texts/comments/tweets{res}')
+        exit()
+    
     # Builds the model
     print(f'{log}[LOG]     {res}Building the model')
     model = POSifiedText(texts)
@@ -358,6 +415,13 @@ def make_model(data_fp:str, colors:dict) -> POSifiedText:
     model.compile(inplace=True)
 
     return model
+
+
+
+
+
+
+
 
 
 
@@ -389,6 +453,12 @@ def generate_sentences(model:POSifiedText, colors:dict, count:int=50):
         print('-'*100)
         print(f'{gen_sent}')
     print('-'*100)
+
+
+
+
+
+
 
 
 

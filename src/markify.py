@@ -4,6 +4,9 @@ from util_funcs import get_user, get_config_dir
 
 from colorama import init as color_init
 from colorama import Fore, Style
+from rich import print as printf
+from rich.console import Console
+from rich.panel import Panel
 
 from argparse import ArgumentParser
 import platform as pf
@@ -32,7 +35,19 @@ def parse_the_fookin_args():
 
 
 
-def main(args, colors:dict):
+def main():
+    color_init()
+    # Gets the colors
+    colors = {
+        'res'  : Style.RESET_ALL,
+        'res2' : Fore.RESET,
+        'bol'  : Style.BRIGHT,
+        'log'  : Style.BRIGHT + Fore.LIGHTGREEN_EX,
+        'war'  : Style.BRIGHT + Fore.LIGHTYELLOW_EX,
+        'err'  : Style.BRIGHT + Fore.LIGHTRED_EX,
+        'spe'  : Fore.LIGHTMAGENTA_EX
+    }
+    args = parse_the_fookin_args()
     res, log, spe = colors['res'], colors['log'], colors['spe']
     # Starts the time
     start = t.perf_counter()
@@ -50,7 +65,7 @@ def main(args, colors:dict):
     if not args.data:
         do_reddit(CONFIG,  DATA_FP, colors)
         do_discord(CONFIG, DATA_FP, colors)
-        # do_twitter(CONFIG, DATA_FP, colors)
+        do_twitter(CONFIG, DATA_FP, colors)
     # Makes the model
     model = make_model(DATA_FP, colors)
     # Generates the sentences
@@ -69,18 +84,18 @@ def main(args, colors:dict):
 
     
 def init_main():
-    color_init()
-    # Gets the colors
-    COLORS = {
-        'res'  : Style.RESET_ALL,
-        'res2' : Fore.RESET,
-        'bol'  : Style.BRIGHT,
-        'log'  : Style.BRIGHT + Fore.LIGHTGREEN_EX,
-        'war'  : Style.BRIGHT + Fore.LIGHTYELLOW_EX,
-        'spe'  : Fore.LIGHTMAGENTA_EX
-    }
-    args = parse_the_fookin_args()
-    main(args, COLORS)
+    console = Console()
+    try:
+        main()
+    except Exception as e:
+        panel = Panel(
+            '[b i red]FATAL ERROR[/]',
+            border_style = 'b'
+        )
+        printf('\n\n')
+        printf(panel)
+        printf('\n\n')
+        console.print_exception()
 
 
 

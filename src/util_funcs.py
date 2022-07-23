@@ -59,10 +59,14 @@ def get_config_dir(system:str, usr:str, args) -> tuple:
         # Config file
         CONFIG_FP  = os.path.join(CONFIG_DIR, 'config.json')
     # Data directory
-    DATA_DIR = os.path.join(CONFIG_DIR, 'DATA')
+    DATA_DIR  = os.path.join(CONFIG_DIR, 'DATA')
     # Data file
-    ct = int(t.time()) # ct = current time
-    DATA_FP = os.path.join(DATA_DIR, f'{ct}.json') if not args.data else args.data
+    ct        = int(t.time()) # ct = current time
+    DATA_FP   = os.path.join(DATA_DIR, f'{ct}.json')
+    # Subsititutes the data file and config file if they're already given via CLI
+    DATA_FP   = DATA_FP   if not args.data   else args.data
+    CONFIG_FP = CONFIG_FP if not args.config else args.config
+    # Returns everything
     return CONFIG_DIR, CONFIG_FP, DATA_DIR, DATA_FP
 
 
