@@ -45,7 +45,7 @@ python markify.py
 
 # Usage
 
-To use, you can simply just run `markify` on the command line, but we gotta setup a config file first. If you're windows, the default location for the config file is `%LOCALAPPDATA%\markify\config.json`, and on linux/macOS it is `~/.config/markify/config.json`. Alterantivly, you can provide the path to the config file using the `-c --config` flag. An ideal config file should look like:
+To use, you can simply just run `markify` on the command line, but we gotta setup a config file first. If you're windows, the default location for the config file is `%LOCALAPPDATA%\markify\config.json`, and on linux/macOS it is `~/.config/markify/config.json`. Alterantively, you can provide the path to the config file using the `-c --config` flag. If you run the program and the config file doesn;t't exist, it makes an empty template. An ideal config file should look like:
 ```json
 {
     "reddit": {

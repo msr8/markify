@@ -1,6 +1,7 @@
-print('Importing modules...')
+# print('Importing modules...')
 from main_funcs import init_config, do_reddit, do_discord, do_twitter, make_model, generate_sentences, print_stats
 from util_funcs import get_user, get_config_dir
+from VERSION    import VERSION
 
 from colorama import init as color_init
 from colorama import Fore, Style
@@ -16,10 +17,11 @@ import time as t
 
 
 def parse_the_fookin_args():
-    parser = ArgumentParser()
+    parser = ArgumentParser(description='Markovify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify')
     parser.add_argument('-c', '--config',  type=str,  help='The path to config file. By default, its {LOCALAPPDATA}/markify/config.json on windows, and ~/.config/markify/config.json on other operating systems')
     parser.add_argument('-d', '--data',    type=str,  help='The path to the json data file. If given, the program will not scrape any data and will just compile the model and generate sentences')
     parser.add_argument('-n', '--number',  type=int,  help='Number of sentences to generate. Default is 50', default=50)
+    parser.add_argument('-v', '--version',            help='Print out the version number', action='store_true')
     args = parser.parse_args()
     return args
 
@@ -47,8 +49,11 @@ def main():
         'err'  : Style.BRIGHT + Fore.LIGHTRED_EX,
         'spe'  : Fore.LIGHTMAGENTA_EX
     }
-    args = parse_the_fookin_args()
     res, log, spe = colors['res'], colors['log'], colors['spe']
+    # Gets the args
+    args = parse_the_fookin_args()
+    # If --version is given, prints the version and exits
+    if args.version:    print(VERSION); exit()
     # Starts the time
     start = t.perf_counter()
     # Gets the initial stuff for program (os type, username, config stuff)
@@ -132,13 +137,9 @@ BLUEPRINT
 
 
 TODO
--> Make CLI accept -c
--> Add text in --help
 -> Change bar format
--> Write checks in every main func
--> Fix discord timestamp
--> Add a 100 msg check in generate sentences
--> Add try/except
+-> Add --version
+
 
 
 
@@ -153,13 +154,10 @@ TODO
 The program:
   Config stuff
   Check cli input with the following params:
-    count
+    number
     data
     config
 
-    reddit
-    discord
-    twitter
   Make the model
   Generate sentences
   In the end, print stats

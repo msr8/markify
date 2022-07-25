@@ -4,7 +4,7 @@ import requests as rq
 import markovify
 import nltk
 
-from util_funcs import f_time
+from util_funcs import f_disc_time, f_time
 
 import os, re, json
 
@@ -203,7 +203,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
 
 
 
-
+# datetime.datetime.fromisoformat()
 def do_discord(config:dict, data_fp:str, colors:dict):
     """
     It logs into discord, gets all the DM channels, gets all the messages in those channels, and saves
@@ -267,7 +267,7 @@ def do_discord(config:dict, data_fp:str, colors:dict):
                 # Adds all the needed attributes
                 new_data.append({
                     'content':     msg['content'],
-                    'timestamp':   msg['timestamp'],
+                    'timestamp':   f_disc_time( msg['timestamp'] ),
                     'channel_id':  chan_id,
                     'id':          msg['id'],
                     'url':         f'https://discord.com/channels/@me/{chan_id}/{msg["id"]}'
@@ -445,7 +445,7 @@ def generate_sentences(model:POSifiedText, colors:dict, count:int=50):
     colors = ['cyan1', 'yellow2']
     for i in range(count):
         # Generates a new sentence
-        gen_sent = model.make_short_sentence(1000)
+        gen_sent = model.make_short_sentence(max_chars=280, tries=1000)
         # Gets the color
         index = i % len(colors)
         color = colors[index]

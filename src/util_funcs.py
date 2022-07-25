@@ -1,3 +1,4 @@
+from datetime import datetime
 import getpass as gp
 import time as t
 import os
@@ -91,6 +92,25 @@ def f_time(seconds) -> str:
     if min:    res += f'{min}min '
     if sec:    res += f'{sec}sec'
     return res
+
+
+
+
+
+def f_disc_time(isoform: str):
+    """
+    Convert an ISO 8601 formatted string to a Unix timestamp
+    
+    :param isoform: str
+    :type isoform: str
+    :return: A string of the timestamp.
+    """
+    dt  = datetime.fromisoformat(isoform)
+    ret = dt.timestamp()
+    ret = int(ret)
+    ret = str(ret)
+    return ret
+
 
 
 

@@ -1,10 +1,14 @@
+from src.VERSION import VERSION as version
 from setuptools import setup
+
+
+
 
 with open('README.md') as f:
     long_desc = f.read()
 
-with open('VERSION.txt') as f:
-    version = f.read()
+# with open('VERSION.txt') as f:
+#     version = f.read()
 
 with open('requirements.txt') as f:
     requirements = f.read().split('\n')
@@ -13,7 +17,7 @@ with open('requirements.txt') as f:
 setup(
     name = 'markify',
     version = version,
-    description = 'A python command line application to scrape your interactions in social media(s) and generate new sentences based on them using markov chains',
+    description = 'Markovify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify',
     # py_modules=['mvp_msr8'],
     long_description=long_desc,
     long_description_content_type='text/markdown',
