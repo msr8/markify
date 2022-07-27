@@ -203,7 +203,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
 
 
 
-# datetime.datetime.fromisoformat()
+
 def do_discord(config:dict, data_fp:str, colors:dict):
     """
     It logs into discord, gets all the DM channels, gets all the messages in those channels, and saves
@@ -326,12 +326,12 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
     # Gets the username
     username = config['twitter']['username']
     # Forms the query
-    query = sntwitter.TwitterSearchScraper(f'from:{username}').get_items()
+    query    = sntwitter.TwitterSearchScraper(f'from:{username}').get_items()
     print(f'{log}[LOG]     {res}Scraping the tweets of {spe}@{username}{res}')
     # Scrapes the tweets
     tweets = []
-    pbar = tqdm(total=10000, leave=False, colour='#696969')
-    count = 0
+    pbar   = tqdm(total=10000, leave=False, colour='#696969')
+    count  = 0
     for twt in query:
         # Checks if we have enough tweets
         if count >= max_twts:    break
@@ -386,7 +386,7 @@ def make_model(data_fp:str, colors:dict) -> POSifiedText:
     :type data_fp: str
     :return: A POSifiedText object
     """
-    res, log, err, spe = colors['res'], colors['log'], colors['err'], colors['spe']
+    res, log, err = colors['res'], colors['log'], colors['err']
 
     # Loads the data
     with open(data_fp) as f:

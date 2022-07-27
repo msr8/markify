@@ -17,7 +17,7 @@ import time as t
 
 
 def parse_the_fookin_args():
-    parser = ArgumentParser(description='Markovify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify')
+    parser = ArgumentParser(description='Markify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify')
     parser.add_argument('-c', '--config',  type=str,  help='The path to config file. By default, its {LOCALAPPDATA}/markify/config.json on windows, and ~/.config/markify/config.json on other operating systems')
     parser.add_argument('-d', '--data',    type=str,  help='The path to the json data file. If given, the program will not scrape any data and will just compile the model and generate sentences')
     parser.add_argument('-n', '--number',  type=int,  help='Number of sentences to generate. Default is 50', default=50)
@@ -137,8 +137,8 @@ BLUEPRINT
 
 
 TODO
--> Change bar format
--> Add --version
+-> Improve time for argpare
+
 
 
 
