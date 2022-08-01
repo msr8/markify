@@ -16,7 +16,6 @@ F8BD96 (orange)
    <img src="https://img.shields.io/github/issues/msr8/markify?color=ABE9B3&labelColor=302D41&style=for-the-badge">
    
    <img src="https://img.shields.io/github/license/msr8/markify?color=96CDFB&labelColor=302D41&style=for-the-badge"/>
-
 </div>
 
 <br>
@@ -162,7 +161,7 @@ The program uses the [Pushshift's API](https://github.com/pushshift/api) to scra
 
 ## Scraping discord messages
 
-To scrape discord messages, first the program checks if the token is valid or not by getting basic information (username, discriminator, and account ID) through the `/users/@me` endpoint. Then it gets all the DM channels you have participated in through the `/@me/channels`. Then it extracts the channel IDs from the response and gets the recent 100 messages in the channels using the `channels/channelid/messages` endpoint, where `channelid` is the channel ID. Then it goes through the respone and adds the messages which are a text message, sent by you, and arent empty, to the data file
+To scrape discord messages, first the program checks if the token is valid or not by getting basic information (username, discriminator, and account ID) through the `/users/@me` endpoint. Then it gets all the DM channels you have participated in through the `/@me/channels` endpoint. Then it extracts the channel IDs from the response and gets the recent 100 messages in the channels using the `/channels/channelid/messages` endpoint, where `channelid` is the channel ID. Then it goes through the respone and adds the messages which are a text message, sent by you, and arent empty, to the data file
 
 <br>
 
@@ -188,19 +187,23 @@ Recently (as of July 2022), discord reworked its system of tokens and the format
 
 <br>
 
-### Q) The installation is stuck at building lxml. What to do?
-
-Sadly, all you can do is wait. It is a [known issue with lxml](https://stackoverflow.com/questions/33064433/lxml-will-never-finish-building-on-ubuntu)
-
-<br>
-
 ### Q) The program is throwing an error and is telling me to install "averaged_perceptron_tagger" or something. What to do?
 
 Running the command given below should work
 ```bash
-python3 -c "import nltk; ntlk.download('averaged_perceptron_tagger')"
+python3 -c "import nltk; nltk.download('averaged_perceptron_tagger')"
 ```
-You can visit [this](https://www.nltk.org/data.html) for more information
+You can visit [this page](https://www.nltk.org/data.html) for more information
+
+<br>
+
+### Q) The installation is stuck at building lxml. What to do?
+
+Sadly, all you can do is wait. It is a [known issue with lxml](https://stackoverflow.com/questions/33064433/lxml-will-never-finish-building-on-ubuntu)
+
+
+
+
 
 
 

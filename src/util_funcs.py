@@ -85,7 +85,7 @@ def f_time(seconds) -> str:
     seconds = int(seconds)
     hr      = seconds // 3600
     min     = (seconds %  3600) // 60
-    sec     = seconds %  60
+    sec     = seconds  %  60
 
     res     = ''
     if hr:     res += f'{hr}hr '

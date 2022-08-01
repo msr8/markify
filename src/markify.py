@@ -1,20 +1,7 @@
-# print('Importing modules...')
-from main_funcs import init_config, do_reddit, do_discord, do_twitter, make_model, generate_sentences, print_stats
-from util_funcs import get_user, get_config_dir
-from VERSION    import VERSION
+# This is the start so that if only --version is given, it prints it out FAST
 
-from colorama import init as color_init
-from colorama import Fore, Style
-from rich import print as printf
-from rich.console import Console
-from rich.panel import Panel
-
+from VERSION  import VERSION
 from argparse import ArgumentParser
-import platform as pf
-import time as t
-
-
-
 
 def parse_the_fookin_args():
     parser = ArgumentParser(description='Markify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify')
@@ -25,7 +12,28 @@ def parse_the_fookin_args():
     args = parser.parse_args()
     return args
 
+if __name__ == '__main__':
+    args = parse_the_fookin_args()
+    # If --version is given, prints the version and exits
+    if args.version:    print(VERSION); exit()
 
+
+
+
+
+
+# ------------------------------ IMPORTS ------------------------------
+from main_funcs import init_config, do_reddit, do_discord, do_twitter, make_model, generate_sentences, print_stats
+from util_funcs import get_user, get_config_dir
+
+from colorama import init as color_init
+from colorama import Fore, Style
+from rich import print as printf
+from rich.console import Console
+from rich.panel import Panel
+
+import platform as pf
+import time as t
 
 
 
