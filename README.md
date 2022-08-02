@@ -16,6 +16,12 @@ F8BD96 (orange)
    <img src="https://img.shields.io/github/issues/msr8/markify?color=ABE9B3&labelColor=302D41&style=for-the-badge">
    
    <img src="https://img.shields.io/github/license/msr8/markify?color=96CDFB&labelColor=302D41&style=for-the-badge"/>
+
+   <br>
+
+   <video controls> 
+        <source src='/Users/ravi/Documents/Github/markify-github/ass/usage.mp4' type="video/mp4">
+    </video>
 </div>
 
 <br>
