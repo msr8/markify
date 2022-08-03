@@ -20,7 +20,7 @@ F8BD96 (orange)
    <br>
 
    <video controls> 
-        <source src='./ass/usagelol.mp4' type="video/mp4">lol
+        <source src='https://raw.githubusercontent.com/msr8/markify/main/ass/usagelol.mp4' type="video/mp4">lol
     </video>
 </div>
 
