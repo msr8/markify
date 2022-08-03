@@ -26,7 +26,7 @@ F8BD96 (orange)
 
 <br>
 
-<!-- https://raw.githubusercontent.com/msr8/markify/main/ass/usagelol.mp4 -->
+https://raw.githubusercontent.com/msr8/markify/main/ass/usagelol.mp4?raw=true
 https://user-images.githubusercontent.com/84911063/139428874-fe182dd6-82c6-49b8-8da1-920ddda3d1ed.mp4
 
 
