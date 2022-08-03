@@ -8,6 +8,9 @@ ABE9B3 (green)
 F8BD96 (orange)
 -->
 
+<br>
+<br>
+
 <div align='center'>
    <img src="https://img.shields.io/github/stars/msr8/markify?color=F8BD96&labelColor=302D41&style=for-the-badge">   
 
@@ -27,14 +30,6 @@ F8BD96 (orange)
 <br>
 
 https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4
-
-<br>
-
-https://raw.githubusercontent.com/msr8/markify/main/ass/usagelol.mp4?raw=true
-
-<br>
-
-https://user-images.githubusercontent.com/84911063/139428874-fe182dd6-82c6-49b8-8da1-920ddda3d1ed.mp4
 
 
 <br>
