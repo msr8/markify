@@ -33,8 +33,8 @@ https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-
 <!-- <br> -->
 
 <p align='center'>
-<a href='https://github.com/msr8/markify'>  Github </a> |
-<a href='https://pypi.org/project/markify'> PyPi   </a>
+<a href='https://github.com/msr8/markify' >Github</a> |
+<a href='https://pypi.org/project/markify'>PyPi</a>
 </p>
 
 
