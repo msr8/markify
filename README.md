@@ -226,7 +226,7 @@ Sadly, all you can do is wait. It is a [known issue with lxml](https://stackover
 <!-- 
 TODO
 
--> Add screen recording
+-> update --help after adding the short desc
 -->
 
 
