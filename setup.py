@@ -15,14 +15,9 @@ with open('requirements.txt') as f:
     requirements = [i for i in requirements if i]
 
 
-# This section to make the usage video compatible with PyPi
-old = 'https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4'
-new = '''\
-<html><video controls> 
-    <source src='https://raw.githubusercontent.com/msr8/markify/main/ass/usagelol.mp4' type="video/mp4">lol
-</video></html>\
-'''
-long_desc = a.replace(old, new)
+# This section remove the video, because its not supported in PyPi
+text = 'https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4'
+long_desc = a.replace(text, '')
 
 # print(long_desc[:3600])
 # print(a)
