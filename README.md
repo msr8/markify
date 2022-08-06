@@ -12,14 +12,34 @@ F8BD96 (orange)
 
 <div align='center'>
 
+   <img src="https://img.shields.io/github/stars/msr8/markify?color=FFBE0B&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/pypi/v/markify?color=FB5607&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/github/last-commit/msr8/markify?color=FF006E&labelColor=302D41&style=for-the-badge">   
+   <img src="https://img.shields.io/github/issues/msr8/markify?color=8338EC&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/github/license/msr8/markify?color=3A86FF&labelColor=302D41&style=for-the-badge"/>
+
+   <br>
+
+   <img src="https://img.shields.io/github/stars/msr8/markify?color=F72585&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/pypi/v/markify?color=7209B7&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/github/last-commit/msr8/markify?color=3A0CA3&labelColor=302D41&style=for-the-badge">   
+   <img src="https://img.shields.io/github/issues/msr8/markify?color=4361EE&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/github/license/msr8/markify?color=4CC9F0&labelColor=302D41&style=for-the-badge"/>
+
+   <br>
+
+   <img src="https://img.shields.io/github/stars/msr8/markify?color=CDB4DB&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/pypi/v/markify?color=FFC8DD&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/github/last-commit/msr8/markify?color=FFAFCC&labelColor=302D41&style=for-the-badge">   
+   <img src="https://img.shields.io/github/issues/msr8/markify?color=BDE0FE&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/github/license/msr8/markify?color=A2D2FF&labelColor=302D41&style=for-the-badge"/>
+
+   <br>
+
    <img src="https://img.shields.io/github/stars/msr8/markify?color=F8BD96&labelColor=302D41&style=for-the-badge">
-
    <img src="https://img.shields.io/pypi/v/markify?color=048A81&labelColor=302D41&style=for-the-badge"/>
-
    <img src="https://img.shields.io/github/last-commit/msr8/markify?color=DDB6F2&labelColor=302D41&style=for-the-badge">   
-
-   <img src="https://img.shields.io/github/issues/msr8/markify?color=ABE9B3&labelColor=302D41&style=for-the-badge">
-   
+   <img src="https://img.shields.io/github/issues/msr8/markify?color=ABE9B3&labelColor=302D41&style=for-the-badge">   
    <img src="https://img.shields.io/github/license/msr8/markify?color=96CDFB&labelColor=302D41&style=for-the-badge"/>
 
    <!-- <br><br>
