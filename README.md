@@ -18,7 +18,7 @@ F8BD96 (orange)
    <img src="https://img.shields.io/github/issues/msr8/markify?color=8338EC&labelColor=302D41&style=for-the-badge">
    <img src="https://img.shields.io/github/license/msr8/markify?color=3A86FF&labelColor=302D41&style=for-the-badge"/>
 
-   <br>
+   <br><br><br>
 
    <img src="https://img.shields.io/github/stars/msr8/markify?color=F72585&labelColor=302D41&style=for-the-badge">
    <img src="https://img.shields.io/pypi/v/markify?color=7209B7&labelColor=302D41&style=for-the-badge"/>
@@ -26,7 +26,7 @@ F8BD96 (orange)
    <img src="https://img.shields.io/github/issues/msr8/markify?color=4361EE&labelColor=302D41&style=for-the-badge">
    <img src="https://img.shields.io/github/license/msr8/markify?color=4CC9F0&labelColor=302D41&style=for-the-badge"/>
 
-   <br>
+   <br><br><br>
 
    <img src="https://img.shields.io/github/stars/msr8/markify?color=CDB4DB&labelColor=302D41&style=for-the-badge">
    <img src="https://img.shields.io/pypi/v/markify?color=FFC8DD&labelColor=302D41&style=for-the-badge"/>
@@ -34,7 +34,7 @@ F8BD96 (orange)
    <img src="https://img.shields.io/github/issues/msr8/markify?color=BDE0FE&labelColor=302D41&style=for-the-badge">
    <img src="https://img.shields.io/github/license/msr8/markify?color=A2D2FF&labelColor=302D41&style=for-the-badge"/>
 
-   <br>
+   <br><br><br>
 
    <img src="https://img.shields.io/github/stars/msr8/markify?color=F8BD96&labelColor=302D41&style=for-the-badge">
    <img src="https://img.shields.io/pypi/v/markify?color=048A81&labelColor=302D41&style=for-the-badge"/>
