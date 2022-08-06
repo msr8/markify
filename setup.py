@@ -7,14 +7,28 @@ from setuptools  import setup
 with open('README.md') as f:
     long_desc = f.read()
 
-
-
 # with open('VERSION.txt') as f:
 #     version = f.read()
 
 with open('requirements.txt') as f:
     requirements = f.read().split('\n')
     requirements = [i for i in requirements if i]
+
+
+# This section to make the usage video compatible with PyPi
+old_vid_tag = '''\
+https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4
+'''
+new_vid_tag = '''\
+<video controls> 
+    <source src='https://raw.githubusercontent.com/msr8/markify/main/ass/usagelol.mp4' type="video/mp4">lol
+</video>
+'''
+long_desc.replace(old_vid_tag, new_vid_tag)
+
+
+
+
 
 setup(
     name = 'markify',
