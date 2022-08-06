@@ -11,13 +11,25 @@ F8BD96 (orange)
 <br>
 
 <div align='center'>
-   <img src="https://img.shields.io/github/stars/msr8/markify?color=F8BD96&labelColor=302D41&style=for-the-badge">   
+
+   <img src="https://img.shields.io/github/stars/msr8/markify?color=F8BD96&labelColor=302D41&style=for-the-badge">
+
+   <img src="https://img.shields.io/pypi/v/markify?color=048A81&labelColor=302D41&style=for-the-badge"/>
 
    <img src="https://img.shields.io/github/last-commit/msr8/markify?color=DDB6F2&labelColor=302D41&style=for-the-badge">   
 
    <img src="https://img.shields.io/github/issues/msr8/markify?color=ABE9B3&labelColor=302D41&style=for-the-badge">
    
    <img src="https://img.shields.io/github/license/msr8/markify?color=96CDFB&labelColor=302D41&style=for-the-badge"/>
+
+   <!-- <br><br>
+   <img src="https://img.shields.io/pypi/v/markify?color=69626D&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/pypi/v/markify?color=AB4E68&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/pypi/v/markify?color=305252&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/pypi/v/markify?color=E36588&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/pypi/v/markify?color=545454&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/pypi/v/markify?color=048A81&labelColor=302D41&style=for-the-badge"/>
+   <img src="https://img.shields.io/pypi/v/markify?color=9D6381&labelColor=302D41&style=for-the-badge"/> -->
 
    <br>
 
@@ -44,7 +56,16 @@ https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-
 
 
 
+# Index
 
+* [Introduction](#introduction)
+* [Installation](#installation)
+* [Usage](#usage)
+* [FLags](#flags)
+* [Working](#working)
+* [FAQs](#faqs)
+
+<br>
 
 # Introduction
 
@@ -159,7 +180,7 @@ markify -v
 
 <br>
 
-# How does this work?
+# Working
 
 This program has 4 main parts: Scraping reddit comments, scraping discord messages, scraping tweets, generating sentences using markov chains. More explanation is given below
 
@@ -226,7 +247,8 @@ Sadly, all you can do is wait. It is a [known issue with lxml](https://stackover
 <!-- 
 TODO
 
--> update --help after adding the short desc
+-> Convert the video to a video tag in setup.py
+-> Add index
 -->
 
 
