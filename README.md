@@ -268,7 +268,6 @@ Sadly, all you can do is wait. It is a [known issue with lxml](https://stackover
 TODO
 
 -> Convert the video to a video tag in setup.py
--> Add index
 -->
 
 
