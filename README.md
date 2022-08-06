@@ -61,8 +61,8 @@ https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-
 * [Introduction](#introduction)
 * [Installation](#installation)
 * [Usage](#usage)
-* [FLags](#flags)
-* [Working](#working)
+* [Flags](#flags)
+* [How does this work?](#how-does-this-work)
 * [FAQs](#faqs)
 
 <br>
@@ -180,7 +180,7 @@ markify -v
 
 <br>
 
-# Working
+# How does this work?
 
 This program has 4 main parts: Scraping reddit comments, scraping discord messages, scraping tweets, generating sentences using markov chains. More explanation is given below
 
