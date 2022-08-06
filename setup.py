@@ -16,11 +16,11 @@ with open('requirements.txt') as f:
 
 
 # This section remove the video, because its not supported in PyPi
-text = 'https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4'
+text      = '<br>\n\nhttps://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4'
 long_desc = a.replace(text, '')
 
-# print(long_desc[:3600])
-# print(a)
+
+
 
 
 setup(
