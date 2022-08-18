@@ -58,42 +58,42 @@ def init_config(config_dir:str, config_fp:str, data_dir:str, data_fp:str, colors
     res, log, war, spe = colors['res'], colors['log'], colors['war'], colors['spe']
 
     # Log the config dir, config file, data dir, and data file
-    print(f'{log}[LOG]     {res}Config directory: {spe}{config_dir}{res}')
-    print(f'{log}[LOG]     {res}Config file:      {spe}{config_fp}{res}')
-    print(f'{log}[LOG]     {res}Data directory:   {spe}{data_dir}{res}')
-    print(f'{log}[LOG]     {res}Data file:        {spe}{data_fp}{res}')
+    print(f'{log}[LOG]      {res}Config directory: {spe}{config_dir}{res}')
+    print(f'{log}[LOG]      {res}Config file:      {spe}{config_fp}{res}')
+    print(f'{log}[LOG]      {res}Data directory:   {spe}{data_dir}{res}')
+    print(f'{log}[LOG]      {res}Data file:        {spe}{data_fp}{res}')
 
     # Checks if config dir exists
     if os.path.exists(config_dir):
-        print(f'{log}[LOG]     {res}{spe}{config_dir}{res} exists')
+        print(f'{log}[LOG]      {res}{spe}{config_dir}{res} exists')
     # If it doesnt, creates it
     else:
-        print(f'{war}[WARNING]{res} {spe}{config_dir}{res} does not exist. Creating it')
+        print(f'{war}[WARNING]{res}  {spe}{config_dir}{res} does not exist. Creating it')
         os.makedirs(config_dir)
 
     # Checks if data dir exists
     if os.path.exists(data_dir):
-        print(f'{log}[LOG]     {res}{spe}{data_dir}{res} exists')
+        print(f'{log}[LOG]    {res}  {spe}{data_dir}{res} exists')
     # If it doesnt, creates it
     else:
-        print(f'{war}[WARNING]{res} {spe}{data_dir}{res} does not exist. Creating it')
+        print(f'{war}[WARNING]{res}  {spe}{data_dir}{res} does not exist. Creating it')
         os.makedirs(data_dir)
     
     # Checks if config file exists
     if os.path.exists(config_fp):
-        print(f'{log}[LOG]     {res}{spe}{config_fp}{res} exists')
+        print(f'{log}[LOG]    {res}  {spe}{config_fp}{res} exists')
     # If it doesnt, creates an empty config.json
     else:
-        print(f'{war}[WARNING]{res} {spe}{config_fp}{res} does not exist. Creating it')
+        print(f'{war}[WARNING]{res}  {spe}{config_fp}{res} does not exist. Creating it')
         with open(config_fp, 'w') as f:
             json.dump({ 'reddit':{'username':''} , 'discord':{'token':''} , 'twitter':{'username':''} }, f, indent=4)
     
     # Checks if data file exists
     if os.path.exists(data_fp):
-        print(f'{log}[LOG]     {res}{spe}{data_fp}{res} exists')
+        print(f'{log}[LOG]    {res}  {spe}{data_fp}{res} exists')
     # If it doesnt, creates an empty data file
     else:
-        print(f'{log}[LOG]     {res}{spe}{data_fp}{res} does not exist. Creating it')
+        print(f'{log}[LOG]    {res}  {spe}{data_fp}{res} does not exist. Creating it')
         with open(data_fp, 'w') as f:
             json.dump({}, f)
 
@@ -137,13 +137,13 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
             present = True
     # If it isnt given, warns the user and skips reddit
     if not present:
-        print(f'{war}[WARNING]{res} Reddit username not given, so {spe}skipping reddit{res}')
+        print(f'{war}[WARNING]{res}  Reddit username not given, so {spe}skipping reddit{res}')
         return
 
     # Gets the username of the user
     username = config['reddit']['username']
     url      = f'https://api.pushshift.io/reddit/comment/search/?author={username}&sort=desc&sort_type=created_utc&size=100'
-    print(f'{log}[LOG]     {res}Getting the newest reddit comments of {spe}u/{username}{res}')
+    print(f'{log}[LOG]      {res}Getting the newest reddit comments of {spe}u/{username}{res}')
     # Scrapes the comments
     comments = []
     pbar     = tqdm(total=10000, leave=False, colour='#696969')
@@ -176,7 +176,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
             count += 1
     # Closes the progress bar
     pbar.close()
-    print(f'{log}[LOG]     {res}Collected {spe}{count}{res} comments')
+    print(f'{log}[LOG]      {res}Collected {spe}{count}{res} comments')
 
     
     # Gets the already existing data
@@ -187,7 +187,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
     # Saves the data
     with open(data_fp, 'w') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
-    print(f'{log}[LOG]     {res}Saved the data to {spe}{data_fp}{res}')
+    print(f'{log}[LOG]      {res}Saved the data to {spe}{data_fp}{res}')
 
 
 
@@ -223,7 +223,7 @@ def do_discord(config:dict, data_fp:str, colors:dict):
             present = True
     # If it isnt given, warns the user and skips discord
     if not present:
-        print(f'{war}[WARNING]{res} Discord token not given, so {spe}skipping discord{res}')
+        print(f'{war}[WARNING]{res}  Discord token not given, so {spe}skipping discord{res}')
         return
 
     token = config['discord']['token']
@@ -234,20 +234,20 @@ def do_discord(config:dict, data_fp:str, colors:dict):
         'Authorization' : token
         }
     # Gets basic data of the user
-    print(f'{log}[LOG]     {res}Logging into discord')
+    print(f'{log}[LOG]      {res}Logging into discord')
     r        = rq.get('https://discordapp.com/api/v9/users/@me', headers=headers).json()
     username = r.get('username')
     disc     = r.get('discriminator')
     my_id    = r.get('id')
     # Checks if the token is valid
     if not my_id:
-        print(f'{war}[WARNING]{res} Discord token is invalid, so {spe}skipping discord{res}')
+        print(f'{war}[WARNING]{res}  Discord token is invalid, so {spe}skipping discord{res}')
         return
     # Else, prints the username
-    print(f'{log}[LOG]     {res}Logged in as {spe}{username}#{disc}{res} ({my_id})')
+    print(f'{log}[LOG]      {res}Logged in as {spe}{username}#{disc}{res} ({my_id})')
 
     # Gets all the DMs
-    print(f'{log}[LOG]     {res}Getting all the DM channels')
+    print(f'{log}[LOG]      {res}Getting all the DM channels')
     r        = rq.get(f'https://discordapp.com/api/v9/users/@me/channels', headers=headers).json()
     # Gets all the channel IDs
     chan_ids = []
@@ -256,7 +256,7 @@ def do_discord(config:dict, data_fp:str, colors:dict):
     # Goes thro the channel IDs
     new_data = []
     count    = 0
-    print(f'{log}[LOG]     {res}Scraping the messages in the channels')
+    print(f'{log}[LOG]      {res}Scraping the messages in the channels')
     for chan_id in tqdm(chan_ids, leave=False, colour='#696969'):
         # Gets the messages of the channel
         r = rq.get(f'https://discordapp.com/api/v9/channels/{chan_id}/messages?limit=100', headers=headers).json()
@@ -274,7 +274,7 @@ def do_discord(config:dict, data_fp:str, colors:dict):
                 })
                 count += 1
     # Prints how many messages were collected from how many DMs
-    print(f'{log}[LOG]     {res}Collected {spe}{count}{res} messages from {spe}{len(chan_ids)}{res} DM channels')
+    print(f'{log}[LOG]      {res}Collected {spe}{count}{res} messages from {spe}{len(chan_ids)}{res} DM channels')
 
     # Gets the already existing data
     with open(data_fp) as f:
@@ -284,7 +284,7 @@ def do_discord(config:dict, data_fp:str, colors:dict):
     # Saves the data
     with open(data_fp, 'w') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
-    print(f'{log}[LOG]     {res}Saved the data to {spe}{data_fp}{res}')
+    print(f'{log}[LOG]      {res}Saved the data to {spe}{data_fp}{res}')
                 
 
 
@@ -320,14 +320,14 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
             present = True
     # If it isnt given, warns the user and skips reddit
     if not present:
-        print(f'{war}[WARNING]{res} Twitter username not given, so {spe}skipping twitter{res}')
+        print(f'{war}[WARNING]{res}  Twitter username not given, so {spe}skipping twitter{res}')
         return
 
     # Gets the username
     username = config['twitter']['username']
     # Forms the query
     query    = sntwitter.TwitterSearchScraper(f'from:{username}').get_items()
-    print(f'{log}[LOG]     {res}Scraping the tweets of {spe}@{username}{res}')
+    print(f'{log}[LOG]      {res}Scraping the tweets of {spe}@{username}{res}')
     # Scrapes the tweets
     tweets = []
     pbar   = tqdm(total=10000, leave=False, colour='#696969')
@@ -350,7 +350,7 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
         pbar.update(1)
     # Once done, closes the progressbar
     pbar.close()
-    print(f'{log}[LOG]     {res}Collected {spe}{count}{res} tweets')
+    print(f'{log}[LOG]      {res}Collected {spe}{count}{res} tweets')
 
     # Gets the already existing data
     with open(data_fp) as f:
@@ -360,7 +360,7 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
     # Saves the data
     with open(data_fp, 'w') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
-    print(f'{log}[LOG]     {res}Saved the data to {spe}{data_fp}{res}')
+    print(f'{log}[LOG]      {res}Saved the data to {spe}{data_fp}{res}')
 
     
 
@@ -404,11 +404,11 @@ def make_model(data_fp:str, colors:dict) -> POSifiedText:
     
     # Checks if less then 100 texts are given
     if len(texts) < 100:
-        print(f'{err}[ERROR]   Not enough data collected, must have atleast 100 texts/comments/tweets{res}')
+        print(f'{err}[ERROR]    Not enough data collected, must have atleast 100 texts/comments/tweets{res}')
         exit()
     
     # Builds the model
-    print(f'{log}[LOG]     {res}Building the model')
+    print(f'{log}[LOG]      {res}Building the model')
     model = POSifiedText(texts)
     # # Complies it since on github it said that this should improve quality
     # model = model.compile() # This one for some reason doesnt produce readable sentences even though it should be the same as the next line. Remind me to open up an issue on github

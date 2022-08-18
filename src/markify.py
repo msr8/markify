@@ -73,7 +73,7 @@ def main():
     # Prints out the available keys
     # -------------------- Todo
     keys = [f'{spe}{k}{res}' for k in CONFIG.keys()]
-    print(f'{log}[LOG]    {res} Config keys: {", ".join(keys)}')
+    print(f'{log}[LOG]    {res}  Config keys: {", ".join(keys)}')
     # If data file is not given, scrapes the data
     if not args.data:
         do_reddit(CONFIG,  DATA_FP, colors)
@@ -145,7 +145,7 @@ BLUEPRINT
 
 
 TODO
--> Improve time for argpare
+-> Fix the encoding error
 
 
 
