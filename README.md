@@ -89,7 +89,7 @@ https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-
 
 # Introduction
 
-Markovify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains
+Markify is an open source command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains
 
 <br>
 

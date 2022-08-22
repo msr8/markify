@@ -26,7 +26,7 @@ long_desc = a.replace(text, '')
 setup(
     name = 'markify',
     version = version,
-    description = 'Markify is a command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify',
+    description = 'Markify is an open source command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains. For more information, please visit https://github.com/msr8/markify',
     # py_modules=['mvp_msr8'],
     long_description = long_desc,
     long_description_content_type = 'text/markdown',
