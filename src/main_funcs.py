@@ -391,6 +391,7 @@ def make_model(data_fp:str, colors:dict) -> POSifiedText:
     :return: A POSifiedText object
     """
     res, log, err = colors['res'], colors['log'], colors['err']
+    nltk.download('averaged_perceptron_tagger')
 
     # Loads the data
     with open(data_fp) as f:
