@@ -161,13 +161,17 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
         if not new_data['data']:      break
         # Goes thro the new data
         for dic in new_data['data']:
+            permalink = ''
+            if type(dic.get('permalink')) is str:
+                permalink = 'https://reddit.com' + dic.get('permalink')
+                
             comments.append({
                 'content':    dic.get('body'),
                 'subreddit':  dic.get('subreddit'),
                 'upvotes':    dic.get('score'),
                 'timestamp':  dic.get('created_utc'),
                 'id':         dic.get('id'),
-                'url':        'https://reddit.com' + dic.get('permalink'),
+                'url':        permalink,
             })
             # Updates the last time (l_time) var, so that earlier comments can be scraped
             l_time = dic.get('created_utc') if dic.get('created_utc') else l_time        
