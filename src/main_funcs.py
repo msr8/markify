@@ -167,7 +167,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
                 'upvotes':    dic.get('score'),
                 'timestamp':  dic.get('created_utc'),
                 'id':         dic.get('id'),
-                'url':        'https://reddit.com' + dic.get('permalink'),
+                'url':        f'https://reddit.com{dic.get("permalink")}'
             })
             # Updates the last time (l_time) var, so that earlier comments can be scraped
             l_time = dic.get('created_utc') if dic.get('created_utc') else l_time        
