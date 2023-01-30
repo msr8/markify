@@ -142,7 +142,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
 
     # Gets the username of the user
     username = config['reddit']['username']
-    url      = f'https://api.pushshift.io/reddit/comment/search/?author={username}&sort=desc&sort_type=created_utc&size=100'
+    url      = f'https://api.pushshift.io/reddit/comment/search/?author={username}&order=desc&sort_type=created_utc&size=100'
     print(f'{log}[LOG]      {res}Getting the newest reddit comments of {spe}u/{username}{res}')
     # Scrapes the comments
     comments = []
@@ -318,7 +318,7 @@ def do_twitter(config:dict, data_fp:str, colors:dict, max_twts:int=10000):
     if config.get('twitter'):
         if config.get('twitter').get('username'):
             present = True
-    # If it isnt given, warns the user and skips reddit
+    # If it isnt given, warns the user and skips twitter
     if not present:
         print(f'{war}[WARNING]{res}  Twitter username not given, so {spe}skipping twitter{res}')
         return

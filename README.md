@@ -85,13 +85,14 @@ https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-
 * [How does this work?](#how-does-this-work)
 * [FAQs](#faqs)
 
-<br>
+<br><br>
+<br><br>
 
 # Introduction
 
 Markify is an open source command line application written in python which scrapes data from your social media(s) (ie reddit, discord, and twitter for now) and generates new setences based on them using markov chains
 
-<br>
+<br><br>
 
 # Installation
 
@@ -130,7 +131,7 @@ cd src
 python markify.py
 ```
 
-<br>
+<br><br>
 
 # Usage
 
@@ -150,7 +151,7 @@ To use, you can simply just run `markify` on the command line, but we gotta setu
 ```
 where the username under reddit section is your reddit username, token under discord is your discord token, and username under twitter is your twitter username. If any of them are not given, the program will skip the collection process for that social media
 
-<br>
+<br><br>
 
 # Flags
 
@@ -198,7 +199,7 @@ Print out the version of markify you're using via this flag. For example:
 markify -v
 ```
 
-<br>
+<br><br>
 
 # How does this work?
 
@@ -208,7 +209,7 @@ This program has 4 main parts: Scraping reddit comments, scraping discord messag
 
 ## Scraping reddit comments
 
-The program uses the [Pushshift's API](https://github.com/pushshift/api) to scrape your comments. Since Pushshift can only return 100 comments at a time, the gets the timestamp of the oldest comment and then sends a request to the API to get comments before that timestamp. This loop goes on until either all your comments are scraped, or 10000 comments are scraped. I chose to use Pushshift's API since its faster, yeilds more result, and doesnt need a client ID or secret
+The program uses the [Pushshift's API](https://github.com/pushshift/api) to scrape your comments. Since Pushshift can only return 100 comments at a time, the program gets the timestamp of the oldest comment and then sends a request to the API to get comments before that timestamp. This loop goes on until either all your comments are scraped, or 10000 comments are scraped. I chose to use Pushshift's API since its faster, yeilds more result, and doesnt need a client ID or secret
 
 <br>
 
@@ -228,7 +229,7 @@ The program uses the [snscrape](https://github.com/JustAnotherArchivist/snscrape
 
 The program extracts all the useful texts from the data file and makes a markov chain model based on them using the [markovify](https://github.com/jsvine/markovify) module. Then the program generates new sentences (default being 50) and prints them out
 
-<br>
+<br><br>
 
 # FAQs
 
