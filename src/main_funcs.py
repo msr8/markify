@@ -142,7 +142,7 @@ def do_reddit(config:dict, data_fp:str, colors:dict):
 
     # Gets the username of the user
     username = config['reddit']['username']
-    url      = f'https://api.pushshift.io/reddit/comment/search/?author={username}&order=desc&sort_type=created_utc&size=100'
+    url      = f'https://api.pushshift.io/reddit/comment/search/?author={username}&order=desc&sort_type=created_utc&size=1000'
     print(f'{log}[LOG]      {res}Getting the newest reddit comments of {spe}u/{username}{res}')
     # Scrapes the comments
     comments = []
