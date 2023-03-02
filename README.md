@@ -209,7 +209,7 @@ This program has 4 main parts: Scraping reddit comments, scraping discord messag
 
 ## Scraping reddit comments
 
-The program uses the [Pushshift's API](https://github.com/pushshift/api) to scrape your comments. Since Pushshift can only return 100 comments at a time, the program gets the timestamp of the oldest comment and then sends a request to the API to get comments before that timestamp. This loop goes on until either all your comments are scraped, or 10000 comments are scraped. I chose to use Pushshift's API since its faster, yeilds more result, and doesnt need a client ID or secret
+The program uses the [Pushshift's API](https://github.com/pushshift/api) to scrape your comments. Since Pushshift can only return 1000 comments at a time, the program gets the timestamp of the oldest comment and then sends a request to the API to get comments before that timestamp. This loop goes on until either all your comments are scraped, or 10000 comments are scraped. I chose to use Pushshift's API since its faster, yeilds more result, and doesnt need a client ID or secret
 
 <br>
 
