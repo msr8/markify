@@ -60,6 +60,12 @@ F8BD96 (orange)
 
 <br>
 
+```
+NOTE: Reddit scraping does not work anymore because of the new (June 2023) policy changes, due to which pushshift had to shut down
+```
+
+<br>
+
 https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-99ef-22e0596cf490.mp4
 
 <!-- <br> -->
