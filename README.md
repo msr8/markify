@@ -96,7 +96,7 @@ https://user-images.githubusercontent.com/79649185/182558272-255becc8-1dcc-45b5-
 
 # Introduction
 
-Markify is an open source command line application written in python which scrapes data from your social media(s) and generates new sentences based on the data collected using markov chains
+Markify is an open source command line application written in python which scrapes data from your social media accounts and utilises markov chains to generate new sentences based on the scraped data
 
 <br><br>
 
