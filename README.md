@@ -60,9 +60,9 @@ F8BD96 (orange)
 
 <br>
 
-```
-NOTE: Reddit scraping does not work anymore because of the new (June 2023) policy changes, due to which pushshift had to shut down
-```
+> [!NOTE]
+> Reddit scraping does not work anymore because of the new (June 2023) policy changes, due to which pushshift had to shut down
+
 
 <br>
 
